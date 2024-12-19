@@ -1,12 +1,12 @@
 resource "aws_instance" "this" {
 
   ami                         = var.ami
-  instance_type               = t2.micro
-  key_name                    = LB-EC2-KP
-  monitoring                  = var
+  instance_type               = var.instance_type
+  key_name                    = var.key_name
+  monitoring                  = var.monitoring
   vpc_security_group_ids      = [aws_security_group.ec2_sg.id]
-  subnet_id                   = aws_subnet.pri.id
-  associate_public_ip_address = false
+  subnet_id                   = var.subnet_id
+  associate_public_ip_address = var.associate_public_ip_address
 
   tags = {
     Name = var.tags

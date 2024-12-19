@@ -4,6 +4,7 @@ variable "ami" {
   default     = ""
 }
 
+
 variable "monitoring" {
   type    = bool
   default = true
