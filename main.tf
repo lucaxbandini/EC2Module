@@ -49,7 +49,6 @@ resource "aws_security_group" "this" {
   tags = {
     Name = var.sg_tag_name
   }
-
 }
 
 resource "aws_kms_key" "this" {
