@@ -12,8 +12,17 @@ resource "aws_instance" "this" {
   tags = {
     Name = var.tags
   }
-
 }
+
+resource "aws_eip" "this" {
+  instance = aws_instance.this.id
+  domain   = "vpc"
+
+  tags = {
+    Name = var.eip_tag_name
+  }
+}
+
 resource "aws_security_group" "this" {
   name        = var.sg_name
   description = "security group for ec2 terraform"
@@ -42,6 +51,7 @@ resource "aws_security_group" "this" {
   }
 
 }
+
 resource "aws_kms_key" "this" {
   description             = "An example symmetric encryption KMS key"
   enable_key_rotation     = var.enable_key_rotation
