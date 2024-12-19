@@ -9,7 +9,7 @@ variable "instance_type" {
   default = ""
 }
 
-variable "key_name" {
+variable "kms_name" {
   type    = string
   default = ""
 }
