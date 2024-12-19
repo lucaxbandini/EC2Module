@@ -38,7 +38,10 @@ variable "tags" {
   type    = string
   default = ""
 }
-
+variable "eip_tag_name" {
+  type    = string
+  default = ""
+}
 variable "sg_name" {
   type    = string
   default = ""
