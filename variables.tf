@@ -85,6 +85,6 @@ variable "deletion_window_in_days" {
 }
 
 variable "aws_caller_identity" {
-  type = string
+  type    = string
   default = ""
 }
