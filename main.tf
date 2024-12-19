@@ -1,11 +1,3 @@
-locals {
-  tags = {
-    terraform   = "true"
-    project     = "luca-ec2-module"
-    Environment = "dev"
-  }
-}
-
 module "ec2_instance" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
